@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { IgxTabsModule, IgxIconModule, IgxGridModule, IgxActionStripModule } from 'igniteui-angular';
-import { IgxCategoryChartModule } from 'igniteui-angular-charts';
+import { IgxCategoryChartModule, IgxFinancialChartModule, IgxTreemapModule } from 'igniteui-angular-charts';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -24,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     IgxCategoryChartModule,
     IgxGridModule,
     IgxActionStripModule,
+    IgxFinancialChartModule,
+    IgxTreemapModule,
     FormsModule,
     HttpClientModule
   ],

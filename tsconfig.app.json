@@ -7,7 +7,7 @@
       "dom"
     ],
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": ["openfin"]
   },
   "files": [
     "src/main.ts",

@@ -13,22 +13,22 @@
                 <div class="column-layout frame-47">
                   <div class="row-layout frame-46">
                     <p class="ig-typography__overline content">
-                      --ticker--
+                      {{ selectedItem.stock_symbol }}
                     </p>
                     <p class="ig-typography__caption text">
                       ∙
                     </p>
                     <p class="ig-typography__overline content">
-                      --exchange--
+                      {{ selectedItem.stock_market }}
                     </p>
                   </div>
                   <h5 class="content">
-                    --stock-company--name
+                    {{ selectedItem.stock_name }}
                   </h5>
                 </div>
                 <div class="row-layout frame-41">
                   <h3 class="content">
-                    --prev close--
+                    {{ selectedItem.previous_close }}
                   </h3>
                 </div>
                 <div class="column-layout frame-47">
@@ -36,8 +36,11 @@
                     <p class="content">
                       Sector
                     </p>
+                    <p class="ig-typography__caption content">
+                      ∙
+                    </p>
                     <p class="ig-typography__subtitle-1 content">
-                      --sector--
+                      {{ selectedItem.stock_sector }}
                     </p>
                   </div>
                   <div class="row-layout frame-42">
@@ -48,10 +51,10 @@
                       ∙
                     </p>
                     <p class="ig-typography__body-2 content">
-                      --industry--
+                      {{ selectedItem.stock_industry }}
                     </p>
                     <p class="ig-typography__body-2 content">
-                      ∙
+                      
                     </p>
                   </div>
                 </div>
@@ -63,7 +66,7 @@
                       PREVIOUS CLOSE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --prev close--
+                      {{ selectedItem.previous_close }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -71,7 +74,7 @@
                       DAY RANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --day range--
+                      {{ selectedItem.day_range }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -79,7 +82,7 @@
                       YEAR RANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --year range--
+                      {{ selectedItem.year_range }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -87,7 +90,7 @@
                       MARKET CAP
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --market cap
+                      {{ selectedItem.stock_market_cap }}
                     </p>
                   </div>
                 </div>
@@ -97,7 +100,7 @@
                       AVG VOLUME
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --avg volume--
+                      {{ selectedItem.avg_volume }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -105,7 +108,7 @@
                       P/E RATIO
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --pe ratio--
+                      {{ selectedItem.pe_ratio }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -113,7 +116,7 @@
                       DIVIDEND YIELD
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --dividend
+                      {{ selectedItem.dividend_yield }}
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -121,14 +124,26 @@
                       PRIMARY EXCHANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      --exchange--
+                      {{ selectedItem.stock_market }}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="column-layout frame-28">
-              <igx-category-chart [dataSource]="fakeStockDataStockData" chartType="area" includedProperties="Month,Open,High,Low,Close" computedPlotAreaMarginMode="series" class="category-chart-1"></igx-category-chart>
+
+              <div class="category-chart chart">
+                <igx-financial-chart #chart
+                  [dataSource]="dataSource"
+                  height="100%" width="100%"
+                  chartType="Candle"
+                  zoomSliderType="None"
+                  subtitle=""
+                  subtitleTopMargin="10"
+                  isWindowSyncedToVisibleRange="true">
+                </igx-financial-chart>
+            </div>
+            
             </div>
           </div>
         </div>
@@ -147,17 +162,17 @@
             <div class="column-layout frame-47">
               <div class="row-layout frame-46">
                 <p class="ig-typography__overline content">
-                  --ticker--
+                  {{ selectedItem.stock_symbol}}
                 </p>
                 <p class="ig-typography__caption text">
                   ∙
                 </p>
                 <p class="ig-typography__overline content">
-                  --exchange--
+                  {{ selectedItem.stock_market }}
                 </p>
               </div>
               <h5 class="content">
-                --stock-company--name
+                {{ selectedItem.stock_name }}
               </h5>
             </div>
           </div>
@@ -187,23 +202,46 @@
                   <div class="column-layout frame-47">
                     <div class="row-layout frame-46">
                       <p class="ig-typography__overline content">
-                        --ticker--
+                        {{ selectedItem.stock_symbol}}
                       </p>
                       <p class="ig-typography__caption text">
                         ∙
                       </p>
                       <p class="ig-typography__overline content">
-                        --exchange--
+                        {{ selectedItem.stock_market }}
                       </p>
                     </div>
                     <h5 class="content">
-                      --stock-company--name
+                      {{ selectedItem.stock_name }}
                     </h5>
                   </div>
                 </div>
               </div>
               <div class="column-layout frame-28">
-                <igx-category-chart [dataSource]="fakePendingOrdersPendingOrders" chartType="line" [xAxisLabelAngle]="30" includedProperties="TimeandDate,Quantity,Price" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart>
+
+                <div className="container fill">
+                  <igx-treemap #treemap class="category-chart">                      
+                      [dataSource]="fakePendingOrdersPendingOrders"
+                      parentIdMemberPath="parent"
+                      idMemberPath="name"
+                      labelMemberPath="name"
+                      valueMemberPath="population"
+                      fillScaleMode="Value"
+                      fillScaleMinimumValue="0"
+                      fillScaleMaximumValue="1500000000"
+                      fillBrushes="rgba(78, 98, 207, 1) rgba(138, 88, 214, 1)"
+                      isFillScaleLogarithmic="true"
+                      rootTitle="Countries"
+                      headerDisplayMode="Overlay"
+                      parentNodeBottomPadding="0"
+                      parentNodeLeftPadding="0"
+                      parentNodeRightPadding="0"
+                      parentNodeTopPadding="0"
+                      outline="black"
+                      strokeThickness="1">
+                </igx-treemap>
+              </div>
+                <!-- <igx-category-chart [dataSource]="fakePendingOrdersPendingOrders" chartType="line" [xAxisLabelAngle]="30" includedProperties="TimeandDate,Quantity,Price" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart> -->
               </div>
             </div>
           </div>
@@ -220,7 +258,7 @@
       <div class="row-layout group">
         <div class="column-layout frame-45">
           <div class="column-layout frame-28">
-            <igx-grid [data]="finTech2500Fins" primaryKey="id" displayDensity="cosy" [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
+            <igx-grid [data]="finTech2500Fins" primaryKey="id" displayDensity="cosy" [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%"  class="grid">
               <igx-grid-toolbar>
                 <igx-grid-toolbar-actions>
                   <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
@@ -234,13 +272,23 @@
               <igx-column field="type" dataType="string" header="Type" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="contract" dataType="string" header="Contract" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="settlement" dataType="string" header="Settlement" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="country" dataType="string" header="Country" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="region" dataType="string" header="Region" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="LastUpdate" dataType="date" header="Last Update" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="changeP" dataType="number" header="Change %" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false">
+                <ng-template igxCell let-val>
+                  <div class="currency-badge-container">
+                      <igx-badge *ngIf="val>0" type="success" position="bottom-right" icon="arrow_upward" class="badge-left"></igx-badge>
+                      <igx-badge *ngIf="val<=0" type="error" position="bottom-right" icon="arrow_downward" class="error badge-left"></igx-badge>
+                      <span class="cellAlignSyle" [class.up]="val>50" [class.down]="val<=0">{{ formatNumber(val) }}</span>
+                  </div>
+              </ng-template>
               <igx-column field="openPrice" dataType="number" header="Open Price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="price" dataType="number" header="Price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="change" dataType="number" header="Change" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="changeP" dataType="number" header="Change %" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="country" dataType="string" header="Country" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="region" dataType="string" header="Region" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="LastUpdate" dataType="date" header="Last Update" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+
+
+              </igx-column>
               <igx-column field="buy" dataType="number" header="Buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="sell" dataType="number" header="Sell" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="spread" dataType="number" header="Spread" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
@@ -256,30 +304,16 @@
               <igx-column field="secType" dataType="string" header="Security Type" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="issuerN" dataType="string" header="Issuer" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="moodys" dataType="string" header="Moody's" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="fitch" dataType="string" header="fitch" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="fitch" dataType="string" header="Fitch" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="dbrs" dataType="string" header="dbrs" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="collatT" dataType="string" header="collatT" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="curncy" dataType="string" header="curncy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="collatT" dataType="string" header="Collateral" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="curncy" dataType="string" header="Currency" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="security" dataType="string" header="security" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="sector" dataType="string" header="sector" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="cusip" dataType="string" header="cusip" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="ticker" dataType="string" header="ticker" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="cpn" dataType="string" header="cpn" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="maturity" dataType="string" header="maturity" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="krD_3YR" dataType="number" header="krD_3YR" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="zV_SPREAD" dataType="number" header="zV_SPREAD" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="kRD_5YR" dataType="number" header="kRD_5YR" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="kRD_1YR" dataType="number" header="kRD_1YR" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indGrou2" dataType="string" header="indGrou2" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indSect3" dataType="string" header="indSect3" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indSubg4" dataType="string" header="indSubg4" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="secType5" dataType="string" header="secType5" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="issuerN6" dataType="string" header="issuerN6" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="moodys7" dataType="string" header="moodys7" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="fitch8" dataType="string" header="fitch8" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="dbrs9" dataType="string" header="dbrs9" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="collatT10" dataType="string" header="collatT10" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-action-strip>
+              <igx-column field="sector" dataType="string" header="Sector" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="cusip" dataType="string" header="CUSIP" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="cpn" dataType="string" header="CPN" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="maturity" dataType="string" header="Maturity" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+                <igx-action-strip>
                 <igx-grid-pinning-actions></igx-grid-pinning-actions>
                 <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
               </igx-action-strip>
