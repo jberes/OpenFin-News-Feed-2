@@ -2,14 +2,170 @@
   <igx-tab-item [selected]="true" class="tab-item">
     <igx-tab-header>
       <igx-icon igxTabHeaderIcon>settings_input_antenna</igx-icon>
-      <span igxTabHeaderLabel>Current Data</span>
+      <span igxTabHeaderLabel>Current Price</span>
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
-      <div class="column-layout frame-22">
-        <div class="row-layout frame-21">
-          <div class="column-layout frame-9">
-            <div class="column-layout frame-5">
-              <div class="row-layout frame-4">
+      <div class="row-layout group">
+        <div class="column-layout frame-45">
+          <div class="column-layout frame-50">
+            <div class="row-layout frame-49">
+              <div class="column-layout frame-48">
+                <div class="column-layout frame-47">
+                  <div class="row-layout frame-46">
+                    <p class="ig-typography__overline content">
+                      AMZN
+                    </p>
+                    <p class="ig-typography__caption text">
+                      ∙
+                    </p>
+                    <p class="ig-typography__overline content">
+                      NASDAQ
+                    </p>
+                  </div>
+                  <h5 class="content">
+                    Amazon.com, Inc.
+                  </h5>
+                </div>
+                <div class="row-layout frame-41">
+                  <h3 class="content">
+                    106.96
+                  </h3>
+                  <div class="row-layout frame-40">
+                    <h6 class="content_2">
+                      +3.15
+                    </h6>
+                    <h6 class="content_2">
+                      (+ 3.03%)
+                    </h6>
+                  </div>
+                </div>
+                <div class="column-layout frame-47">
+                  <div class="row-layout frame-43">
+                    <p class="content">
+                      After Hours:
+                    </p>
+                    <p class="ig-typography__subtitle-1 content">
+                      $107.15
+                    </p>
+                    <p class="ig-typography__subtitle-1 content_2">
+                      (+ 0.21%)
+                    </p>
+                    <p class="ig-typography__subtitle-1 content_2">
+                      +0.22
+                    </p>
+                  </div>
+                  <div class="row-layout frame-42">
+                    <p class="ig-typography__body-2 content">
+                      Closed:
+                    </p>
+                    <p class="ig-typography__body-2 content">
+                      Apr 21, 6:19:43 PM UTC-4
+                    </p>
+                    <p class="ig-typography__caption content">
+                      ∙
+                    </p>
+                    <p class="ig-typography__body-2 content">
+                      NASDAQ
+                    </p>
+                    <p class="ig-typography__body-2 content">
+                      ∙
+                    </p>
+                    <a href="url" target="_blank" class="ig-typography__body-1 hyperlink-1">
+                      Disclaimer
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row-layout frame-39">
+                <div class="column-layout frame-38">
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      PREVIOUS CLOSE
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      DAY RANGE
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      YEAR RANGE
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      MARKET CAP
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                </div>
+                <div class="column-layout frame-38">
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      AVG VOLUME
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      P/E RATIO
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      DIVIDEND YIELD
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      $103.81
+                    </p>
+                  </div>
+                  <div class="row-layout frame-37">
+                    <p class="ig-typography__caption subtitle-30">
+                      PRIMARY EXCHANGE
+                    </p>
+                    <p class="ig-typography__caption subtitle-31">
+                      NASDAQ
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column-layout frame-28">
+              <igx-category-chart [dataSource]="financialBoxOfficeRevenue" chartType="line" computedPlotAreaMarginMode="series" class="category-chart-1"></igx-category-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </igx-tab-content>
+  </igx-tab-item>
+  <igx-tab-item class="tab-item">
+    <igx-tab-header>
+      <igx-icon igxTabHeaderIcon>assignment_late</igx-icon>
+      <span igxTabHeaderLabel>Latest News</span>
+    </igx-tab-header>
+    <igx-tab-content class="row-layout tab-item-content">
+      <div class="column-layout frame-45">
+        <div class="row-layout frame-49">
+          <div class="column-layout frame-48">
+            <div class="column-layout frame-47">
+              <div class="row-layout frame-46">
                 <p class="ig-typography__overline content">
                   AMZN
                 </p>
@@ -24,156 +180,14 @@
                 Amazon.com, Inc.
               </h5>
             </div>
-            <div class="row-layout frame-3">
-              <h3 class="content">
-                106.96
-              </h3>
-              <div class="row-layout frame-2">
-                <h6 class="content_2">
-                  +3.15
-                </h6>
-                <h6 class="content_2">
-                  (+ 3.03%)
-                </h6>
-              </div>
-            </div>
-            <div class="column-layout frame-5">
-              <div class="row-layout frame-6">
-                <p class="content">
-                  After Hours:
-                </p>
-                <p class="ig-typography__subtitle-1 content">
-                  $107.15
-                </p>
-                <p class="ig-typography__subtitle-1 content_2">
-                  (+ 0.21%)
-                </p>
-                <p class="ig-typography__subtitle-1 content_2">
-                  +0.22
-                </p>
-              </div>
-              <div class="row-layout frame-7">
-                <p class="ig-typography__body-2 content">
-                  Closed:
-                </p>
-                <p class="ig-typography__body-2 content">
-                  Apr 21, 6:19:43 PM UTC-4
-                </p>
-                <p class="ig-typography__caption content">
-                  ∙
-                </p>
-                <p class="ig-typography__body-2 content">
-                  NASDAQ
-                </p>
-                <p class="ig-typography__body-2 content">
-                  ∙
-                </p>
-                <a href="url" target="_blank" class="ig-typography__body-1 hyperlink">
-                  Disclaimer
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="row-layout frame-20">
-            <div class="column-layout frame-19">
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  PREVIOUS CLOSE
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  DAY RANGE
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  YEAR RANGE
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  MARKET CAP
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-            </div>
-            <div class="column-layout frame-19">
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  AVG VOLUME
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  P/E RATIO
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  DIVIDEND YIELD
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  $103.81
-                </p>
-              </div>
-              <div class="row-layout frame-16">
-                <p class="ig-typography__caption subtitle-11">
-                  PRIMARY EXCHANGE
-                </p>
-                <p class="ig-typography__caption subtitle-10">
-                  NASDAQ
-                </p>
-              </div>
-            </div>
           </div>
         </div>
-        <div class="column-layout frame-1">
-          <igx-category-chart [dataSource]="financialBoxOfficeRevenue" chartType="line" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart>
-        </div>
-        <div class="row-layout frame"></div>
-      </div>
-    </igx-tab-content>
-  </igx-tab-item>
-  <igx-tab-item class="tab-item">
-    <igx-tab-header>
-      <igx-icon igxTabHeaderIcon>info</igx-icon>
-      <span igxTabHeaderLabel>News &amp; Info</span>
-    </igx-tab-header>
-    <igx-tab-content class="row-layout tab-item-content">
-      <div class="row-layout group">
-        <div class="column-layout frame-22">
-          <div class="column-layout frame-1">
-            <igx-grid [data]="companyNewsDataNewsFeed" primaryKey="Id" displayDensity="cosy" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
-              <igx-grid-toolbar>
-                <igx-grid-toolbar-actions>
-                  <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
-                </igx-grid-toolbar-actions>
-                <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
-              </igx-grid-toolbar>
-              <igx-column field="Id" dataType="number" header="Id" [hidden]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="Headline" dataType="string" header="Headline" width="749px" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="Ticker" dataType="string" header="Ticker" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-            </igx-grid>
-          </div>
-          <div class="row-layout frame"></div>
+        <div class="column-layout frame-28">
+          <igx-grid [data]="companyNewsDataNewsFeed" primaryKey="Id" displayDensity="cosy" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
+            <igx-column field="Id" dataType="number" header="Id" [hidden]="true" [sortable]="true" [selectable]="false"></igx-column>
+            <igx-column field="Headline" dataType="string" header="Headline" width="797px" [sortable]="true" [selectable]="false"></igx-column>
+            <igx-column field="Ticker" dataType="string" header="Ticker" [sortable]="true" [selectable]="false"></igx-column>
+          </igx-grid>
         </div>
       </div>
     </igx-tab-content>
@@ -185,11 +199,35 @@
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
       <div class="row-layout group">
-        <div class="column-layout frame-22">
-          <div class="column-layout frame-1">
-            <igx-category-chart [dataSource]="financialBoxOfficeRevenue" computedPlotAreaMarginMode="series" class="category-chart_1"></igx-category-chart>
+        <div class="row-layout group">
+          <div class="column-layout frame-45">
+            <div class="column-layout frame-50">
+              <div class="row-layout frame-49">
+                <div class="column-layout frame-48">
+                  <div class="column-layout frame-47">
+                    <div class="row-layout frame-46">
+                      <p class="ig-typography__overline content">
+                        AMZN
+                      </p>
+                      <p class="ig-typography__caption text">
+                        ∙
+                      </p>
+                      <p class="ig-typography__overline content">
+                        NASDAQ
+                      </p>
+                    </div>
+                    <h5 class="content">
+                      Amazon.com, Inc.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+              <div class="column-layout frame-28">
+                <igx-category-chart [dataSource]="financialBoxOfficeRevenue" chartType="line" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart>
+              </div>
+              <div class="row-layout frame-2"></div>
+            </div>
           </div>
-          <div class="row-layout frame"></div>
         </div>
       </div>
     </igx-tab-content>
@@ -201,8 +239,8 @@
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
       <div class="row-layout group">
-        <div class="column-layout frame-22">
-          <div class="column-layout frame-1">
+        <div class="column-layout frame-45">
+          <div class="column-layout frame-28">
             <igx-grid [data]="finTech2500Fins" primaryKey="id" displayDensity="cosy" [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
               <igx-grid-toolbar>
                 <igx-grid-toolbar-actions>
@@ -211,36 +249,36 @@
                   <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
                   <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
                 </igx-grid-toolbar-actions>
-                <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
+                <igx-grid-toolbar-title>All Sector Data</igx-grid-toolbar-title>
               </igx-grid-toolbar>
-              <igx-column field="id" dataType="number" header="id" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="id" dataType="number" header="id" [hidden]="true" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-paginator [perPage]="500"></igx-paginator>
-              <igx-column field="category" dataType="string" header="category" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="type" dataType="string" header="type" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="contract" dataType="string" header="contract" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="settlement" dataType="string" header="settlement" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="country" dataType="string" header="country" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="region" dataType="string" header="region" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="LastUpdate" dataType="date" header="LastUpdate" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="openPrice" dataType="number" header="openPrice" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="price" dataType="number" header="price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="change" dataType="number" header="change" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="changeP" dataType="number" header="changeP" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="buy" dataType="number" header="buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="sell" dataType="number" header="sell" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="spread" dataType="number" header="spread" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="volume" dataType="number" header="volume" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="highD" dataType="number" header="highD" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="lowD" dataType="number" header="lowD" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="highY" dataType="number" header="highY" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="lowY" dataType="number" header="lowY" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="startY" dataType="number" header="startY" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indGrou" dataType="string" header="indGrou" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indSect" dataType="string" header="indSect" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="indSubg" dataType="string" header="indSubg" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="secType" dataType="string" header="secType" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="issuerN" dataType="string" header="issuerN" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-              <igx-column field="moodys" dataType="string" header="moodys" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="category" dataType="string" header="Category" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="type" dataType="string" header="Type" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="contract" dataType="string" header="Contract" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="settlement" dataType="string" header="Settlement" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="country" dataType="string" header="Country" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="region" dataType="string" header="Region" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="LastUpdate" dataType="date" header="Last Update" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="openPrice" dataType="number" header="Open Price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="price" dataType="number" header="Price" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="change" dataType="number" header="Change" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="changeP" dataType="number" header="Change %" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="buy" dataType="number" header="Buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="sell" dataType="number" header="Sell" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="spread" dataType="number" header="Spread" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="volume" dataType="number" header="Volume" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="highD" dataType="number" header="High D" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="lowD" dataType="number" header="Low D" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="highY" dataType="number" header="High Y" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="lowY" dataType="number" header="Low Y" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="startY" dataType="number" header="Start Y" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="indGrou" dataType="string" header="Industry" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="indSect" dataType="string" header="Industry Sector" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="indSubg" dataType="string" header="Industry Sub Group" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="secType" dataType="string" header="Security Type" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="issuerN" dataType="string" header="Issuer" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+              <igx-column field="moodys" dataType="string" header="Moody's" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="fitch" dataType="string" header="fitch" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="dbrs" dataType="string" header="dbrs" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="collatT" dataType="string" header="collatT" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
@@ -270,7 +308,6 @@
               </igx-action-strip>
             </igx-grid>
           </div>
-          <div class="row-layout frame"></div>
         </div>
       </div>
     </igx-tab-content>
