@@ -1,0 +1,85 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+.column-layout {
+  display: flex;
+  flex-direction: column;
+}
+.trader-app-v-2 {
+  background-color: rgba(29, 29, 29, 1);
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.row-layout {
+  display: flex;
+}
+.group {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.frame-17 {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 32px;
+  position: relative;
+  padding: 32px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.group_1 {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  gap: 32px;
+  position: relative;
+  min-width: 1200px;
+  min-height: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.nav-drawer {
+  min-width: min-content;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.nav-drawer-item {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+}
+.icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: hsla(var(--ig-gray-700));
+}
+.icon_1 {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: hsla(var(--ig-gray-900));
+}
+.icon_2 {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  color: hsla(var(--ig-primary-500));
+}
