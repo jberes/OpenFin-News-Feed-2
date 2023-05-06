@@ -16,7 +16,7 @@ export class CompanyStockDataService {
 
   public GenerateStockPriceData(priceStart: number, volumeStart: number): any {
     let dateEnd: Date = new Date();
-
+    //console.log("In Stock Price Data Generator");
     let priceRange = priceStart * 0.05;
     let volumeRange = volumeStart * 0.05;
     let dataCount = 100;
@@ -42,6 +42,7 @@ export class CompanyStockDataService {
     }
 
     stockData = stockData.reverse();
+    //console.log("Stock Data: " + stockData);
     return stockData;
   }
 

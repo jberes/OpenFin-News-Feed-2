@@ -121,7 +121,7 @@
                   </div>
                   <div class="row-layout frame-37">
                     <p class="ig-typography__caption subtitle-30">
-                      PRIMARY EXCHANGE
+                      EXCHANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
                       {{ selectedItem.stock_market }}
@@ -162,7 +162,7 @@
             <div class="column-layout frame-47">
               <div class="row-layout frame-46">
                 <p class="ig-typography__overline content">
-                  {{ selectedItem.stock_symbol}}
+                  {{ selectedItem.stock_symbol }}
                 </p>
                 <p class="ig-typography__caption text">
                   ∙
@@ -180,7 +180,7 @@
         <div class="column-layout frame-28">
           <igx-grid [data]="companyNewsDataNewsFeed" primaryKey="Id" displayDensity="cosy" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
             <igx-column field="Id" dataType="number" header="Id" [hidden]="true" [sortable]="true" [selectable]="false"></igx-column>
-            <igx-column field="Headline" dataType="string" header="Headline" width="797px" [sortable]="true" [selectable]="false"></igx-column>
+            <igx-column field="Headline" dataType="string" header="Headline" width="600px" [sortable]="true" [selectable]="false"></igx-column>
             <igx-column field="Ticker" dataType="string" header="Ticker" [sortable]="true" [selectable]="false"></igx-column>
           </igx-grid>
         </div>
@@ -190,7 +190,7 @@
   <igx-tab-item class="tab-item">
     <igx-tab-header>
       <igx-icon igxTabHeaderIcon>assessment</igx-icon>
-      <span igxTabHeaderLabel>Sector Analyis</span>
+      <span igxTabHeaderLabel>Sector Analysis</span>
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
       <div class="row-layout group">
