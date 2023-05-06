@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { IgxNavigationDrawerModule, IgxIconModule } from 'igniteui-angular';
+import { IgxNavigationDrawerModule, IgxIconModule, IgxCategoryChartModule } from 'igniteui-angular';
 import { TraderAppV2Component } from './trader-app-v2.component';
 
 describe('TraderAppV2Component', () => {
@@ -12,7 +12,7 @@ describe('TraderAppV2Component', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ TraderAppV2Component ],
-      imports: [ NoopAnimationsModule, FormsModule, IgxNavigationDrawerModule, IgxIconModule ]
+      imports: [ NoopAnimationsModule, FormsModule, IgxNavigationDrawerModule, IgxIconModule, IgxCategoryChartModule ]
     })
     .compileComponents();
   });

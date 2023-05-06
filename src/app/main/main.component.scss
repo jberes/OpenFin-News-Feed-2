@@ -14,11 +14,22 @@
 .tab-item {
   min-width: 100%;
 }
+.row-layout {
+  display: flex;
+}
+.group {
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  position: relative;
+  min-width: 100%;
+  min-height: 50px;
+}
 .column-layout {
   display: flex;
   flex-direction: column;
 }
-.frame-22 {
+.frame-45 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -29,10 +40,16 @@
   flex-grow: 1;
   flex-basis: 0;
 }
-.row-layout {
-  display: flex;
+.frame-50 {
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 40px;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
-.frame-21 {
+.frame-49 {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -42,7 +59,7 @@
   align-self: stretch;
   flex-shrink: 0;
 }
-.frame-9 {
+.frame-48 {
   justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
@@ -51,27 +68,27 @@
   flex-grow: 1;
   flex-basis: 0px;
 }
-.frame-5 {
+.frame-47 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
   position: relative;
 }
-.frame-4 {
+.frame-46 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
   gap: 4px;
   position: relative;
 }
-.frame-3 {
+.frame-41 {
   justify-content: flex-start;
   align-items: center;
   align-content: flex-start;
   gap: 10px;
   position: relative;
 }
-.frame-2 {
+.frame-40 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -79,21 +96,21 @@
   position: relative;
   padding: 10px;
 }
-.frame-6 {
+.frame-43 {
   justify-content: flex-start;
   align-items: center;
   align-content: flex-start;
   gap: 8px;
   position: relative;
 }
-.frame-7 {
+.frame-42 {
   justify-content: flex-start;
   align-items: center;
   align-content: flex-start;
   gap: 4px;
   position: relative;
 }
-.frame-20 {
+.frame-39 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -103,7 +120,7 @@
   flex-grow: 1;
   flex-basis: 0;
 }
-.frame-19 {
+.frame-38 {
   justify-content: flex-start;
   align-items: flex-start;
   align-content: flex-start;
@@ -112,7 +129,7 @@
   flex-grow: 1;
   flex-basis: 0px;
 }
-.frame-16 {
+.frame-37 {
   border-color: rgba(255, 255, 255, 0.10000000149011612);
   border-width: 1px;
   border-style: solid;
@@ -125,7 +142,7 @@
   flex-grow: 1;
   flex-basis: 0px;
 }
-.frame-1 {
+.frame-28 {
   justify-content: center;
   align-items: center;
   align-content: flex-start;
@@ -135,7 +152,7 @@
   flex-grow: 1;
   flex-basis: 0px;
 }
-.frame {
+.frame-2 {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
@@ -144,14 +161,6 @@
   position: relative;
   align-self: stretch;
   flex-shrink: 0;
-}
-.group {
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: flex-start;
-  position: relative;
-  min-width: 100%;
-  min-height: 50px;
 }
 .tab-item-content {
   justify-content: flex-start;
@@ -174,19 +183,25 @@
   color: hsla(var(--ig-success-500));
   position: relative;
 }
-.hyperlink {
+.hyperlink-1 {
   color: hsla(var(--ig-info-500));
   cursor: pointer;
   position: relative;
 }
-.subtitle-11 {
+.subtitle-30 {
   color: hsla(var(--ig-gray-400));
   position: relative;
 }
-.subtitle-10 {
+.subtitle-31 {
   text-align: center;
   color: #FFFFFFFF;
   position: relative;
+}
+.category-chart-1 {
+  position: relative;
+  align-self: stretch;
+  flex-grow: 1;
+  flex-basis: 0px;
 }
 .category-chart {
   position: relative;
@@ -194,13 +209,6 @@
   align-self: stretch;
   flex-grow: 1;
   flex-basis: 0px;
-}
-.category-chart_1 {
-  width: 100%;
-  min-width: 400px;
-  min-height: 300px;
-  flex-grow: 1;
-  flex-basis: 0;
 }
 .grid {
   min-width: 600px;
