@@ -88,14 +88,6 @@
   gap: 10px;
   position: relative;
 }
-.frame-40 {
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  gap: 10px;
-  position: relative;
-  padding: 10px;
-}
 .frame-43 {
   justify-content: flex-start;
   align-items: center;
@@ -152,16 +144,6 @@
   flex-grow: 1;
   flex-basis: 0px;
 }
-.frame-2 {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: stretch;
-  gap: 16px;
-  position: relative;
-  align-self: stretch;
-  flex-shrink: 0;
-}
 .tab-item-content {
   justify-content: flex-start;
   align-items: stretch;
@@ -177,15 +159,6 @@
 }
 .text {
   color: #FFFFFFB2;
-  position: relative;
-}
-.content_2 {
-  color: hsla(var(--ig-success-500));
-  position: relative;
-}
-.hyperlink-1 {
-  color: hsla(var(--ig-info-500));
-  cursor: pointer;
   position: relative;
 }
 .subtitle-30 {

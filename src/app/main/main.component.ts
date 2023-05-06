@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FinancialService } from '../services/financial.service';
+import { FakeStockDataService } from '../services/fake-stock-data.service';
+import { FakePendingOrdersService } from '../services/fake-pending-orders.service';
 import { CompanyNewsDataService } from '../services/company-news-data.service';
 import { FinTech2500Service } from '../services/fin-tech2500.service';
 
@@ -9,20 +10,23 @@ import { FinTech2500Service } from '../services/fin-tech2500.service';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  public financialBoxOfficeRevenue: any = null;
+  public fakeStockDataStockData: any = null;
   public companyNewsDataNewsFeed: any = null;
+  public fakePendingOrdersPendingOrders: any = null;
   public finTech2500Fins: any = null;
 
   constructor(
-    private financialService: FinancialService,
+    private fakeStockDataService: FakeStockDataService,
     private companyNewsDataService: CompanyNewsDataService,
+    private fakePendingOrdersService: FakePendingOrdersService,
     private finTech2500Service: FinTech2500Service,
   ) {}
 
   ngOnInit() {
     // depending on implementation, data subscriptions might need to be unsubbed later
-    this.financialService.getData('BoxOfficeRevenue').subscribe(data => this.financialBoxOfficeRevenue = data);
+    this.fakeStockDataService.getStockData().subscribe(data => this.fakeStockDataStockData = data);
     this.companyNewsDataService.getNewsFeed().subscribe(data => this.companyNewsDataNewsFeed = data);
+    this.fakePendingOrdersService.getPendingOrders().subscribe(data => this.fakePendingOrdersPendingOrders = data);
     this.finTech2500Service.getFins().subscribe(data => this.finTech2500Fins = data);
   }
 }
