@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { CompanyStockDataService } from '../services/company-stock-data.service';
 import { FakeStockDataService } from '../services/fake-stock-data.service';
 import { FakePendingOrdersService } from '../services/fake-pending-orders.service';
 import { CompanyNewsDataService } from '../services/company-news-data.service';
 import { FinTech2500Service } from '../services/fin-tech2500.service';
+import { GlobalService } from '../services/global-service.service';
 
 @Component({
   selector: 'app-main',
@@ -19,6 +20,11 @@ export class MainComponent implements OnInit {
   public fakePendingOrdersPendingOrders: any = null;
   public finTech2500Fins: any = null;
 
+  private originalCompanyNewsDataNewsFeed: any = null;
+  public dataArray: any = null;
+  public labelValue: string = '';
+  globalTicker: string = '';
+
 
   dataSource: any[] = [];
   originalStockSymbolData: any[] = [];
@@ -33,7 +39,12 @@ export class MainComponent implements OnInit {
     private fakePendingOrdersService: FakePendingOrdersService,
     private finTech2500Service: FinTech2500Service,
     private companyStockDataService: CompanyStockDataService,
-  ) {}
+    private cdRef: ChangeDetectorRef,
+    private globalService: GlobalService,
+  ) {
+    this.globalTicker = this.globalService.globalTicker;
+    this.globalService.initInterApp();
+  }
 
   ngOnInit() {
     
@@ -49,11 +60,19 @@ export class MainComponent implements OnInit {
       }
     })
 
+    this.globalService.dataArray.subscribe(data => {
+      this.labelValue = data[0].id.ticker;
+      this.globalService.globalTicker = data[0].id.ticker
+      this.globalTicker = this.globalService.globalTicker;
+      //this.filterNewsFeed();
+      this.cdRef.detectChanges();
+    });
+
     // this should all go away for the most part
     //this.fakeStockDataService.getStockData().subscribe(data => this.fakeStockDataStockData = data);
-    this.companyNewsDataService.getNewsFeed().subscribe(data => this.companyNewsDataNewsFeed = data);
-    this.fakePendingOrdersService.getPendingOrders().subscribe(data => this.fakePendingOrdersPendingOrders = data);
-    this.finTech2500Service.getFins().subscribe(data => this.finTech2500Fins = data);
+    //this.companyNewsDataService.getNewsFeed().subscribe(data => this.companyNewsDataNewsFeed = data);
+    //this.fakePendingOrdersService.getPendingOrders().subscribe(data => this.fakePendingOrdersPendingOrders = data);
+    //this.finTech2500Service.getFins().subscribe(data => this.finTech2500Fins = data);
   }
 
   onItemClicked(item: any) {
@@ -78,6 +97,37 @@ export class MainComponent implements OnInit {
     const title = `${company} (${symbol})`;
     (stockPriceDataItems as any).__dataIntents = { close: [`SeriesTitle/${title}`] };
     this.dataSource = stockPriceDataItems;
+  }
+
+
+  private filterNewsFeed(): void {
+    console.log("I am in the News Feed") + this.globalTicker;
+   // if (this.companyNewsDataNewsFeed && this.dataArray && this.dataArray.length > 0) {
+   if (this.globalTicker) {
+    console.log("I am in the If: " + this.globalTicker);
+    //this.companyNewsDataNewsFeed = this.originalCompanyNewsDataNewsFeed.filter(item => this.globalTicker);
+       console.log("Original News Feed: " + this.originalCompanyNewsDataNewsFeed);
+       console.log("Company News Feed: " + this.companyNewsDataNewsFeed);  
+       if (this.globalService.globalFeed !== null) {
+        this.companyNewsDataNewsFeed = this.globalService.globalFeed
+      } else {
+        
+        this.companyNewsDataNewsFeed = this.originalCompanyNewsDataNewsFeed.filter(item => item.Ticker && item.Ticker === this.globalTicker);
+      }
+    //this.companyNewsDataNewsFeed = this.originalCompanyNewsDataNewsFeed.filter(item => item.Ticker && item.Ticker === this.globalTicker);
+    //this.globalService.globalFeed = this.companyNewsDataNewsFeed;
+    console.log("Global Feed: " + this.globalService.globalFeed);
+    //stockItem = this.filteredStockSymbolData[0];
+  } else {
+    //this.companyNewsDataNewsFeed = this.originalCompanyNewsDataNewsFeed.filter(item => item.Ticker && item.Ticker === this.globalTicker);
+    //this.companyNewsDataNewsFeed = this.originalCompanyNewsDataNewsFeed;
+  }
+
+
+      
+      const ticker = this.globalTicker; //this.dataArray[0].id.default;
+      console.log("Global Ticker: " + this.globalTicker);
+      console.log("I set the Ticker: " + ticker); 
   }
 
   public formatNumber(value: number) {
