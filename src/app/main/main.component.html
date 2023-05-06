@@ -13,66 +13,46 @@
                 <div class="column-layout frame-47">
                   <div class="row-layout frame-46">
                     <p class="ig-typography__overline content">
-                      AMZN
+                      --ticker--
                     </p>
                     <p class="ig-typography__caption text">
                       ∙
                     </p>
                     <p class="ig-typography__overline content">
-                      NASDAQ
+                      --exchange--
                     </p>
                   </div>
                   <h5 class="content">
-                    Amazon.com, Inc.
+                    --stock-company--name
                   </h5>
                 </div>
                 <div class="row-layout frame-41">
                   <h3 class="content">
-                    106.96
+                    --prev close--
                   </h3>
-                  <div class="row-layout frame-40">
-                    <h6 class="content_2">
-                      +3.15
-                    </h6>
-                    <h6 class="content_2">
-                      (+ 3.03%)
-                    </h6>
-                  </div>
                 </div>
                 <div class="column-layout frame-47">
                   <div class="row-layout frame-43">
                     <p class="content">
-                      After Hours:
+                      Sector
                     </p>
                     <p class="ig-typography__subtitle-1 content">
-                      $107.15
-                    </p>
-                    <p class="ig-typography__subtitle-1 content_2">
-                      (+ 0.21%)
-                    </p>
-                    <p class="ig-typography__subtitle-1 content_2">
-                      +0.22
+                      --sector--
                     </p>
                   </div>
                   <div class="row-layout frame-42">
                     <p class="ig-typography__body-2 content">
-                      Closed:
-                    </p>
-                    <p class="ig-typography__body-2 content">
-                      Apr 21, 6:19:43 PM UTC-4
+                      Industry
                     </p>
                     <p class="ig-typography__caption content">
                       ∙
                     </p>
                     <p class="ig-typography__body-2 content">
-                      NASDAQ
+                      --industry--
                     </p>
                     <p class="ig-typography__body-2 content">
                       ∙
                     </p>
-                    <a href="url" target="_blank" class="ig-typography__body-1 hyperlink-1">
-                      Disclaimer
-                    </a>
                   </div>
                 </div>
               </div>
@@ -83,7 +63,7 @@
                       PREVIOUS CLOSE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --prev close--
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -91,7 +71,7 @@
                       DAY RANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --day range--
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -99,7 +79,7 @@
                       YEAR RANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --year range--
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -107,7 +87,7 @@
                       MARKET CAP
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --market cap
                     </p>
                   </div>
                 </div>
@@ -117,7 +97,7 @@
                       AVG VOLUME
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --avg volume--
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -125,7 +105,7 @@
                       P/E RATIO
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --pe ratio--
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -133,7 +113,7 @@
                       DIVIDEND YIELD
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      $103.81
+                      --dividend
                     </p>
                   </div>
                   <div class="row-layout frame-37">
@@ -141,14 +121,14 @@
                       PRIMARY EXCHANGE
                     </p>
                     <p class="ig-typography__caption subtitle-31">
-                      NASDAQ
+                      --exchange--
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div class="column-layout frame-28">
-              <igx-category-chart [dataSource]="financialBoxOfficeRevenue" chartType="line" computedPlotAreaMarginMode="series" class="category-chart-1"></igx-category-chart>
+              <igx-category-chart [dataSource]="fakeStockDataStockData" chartType="area" includedProperties="Month,Open,High,Low,Close" computedPlotAreaMarginMode="series" class="category-chart-1"></igx-category-chart>
             </div>
           </div>
         </div>
@@ -167,17 +147,17 @@
             <div class="column-layout frame-47">
               <div class="row-layout frame-46">
                 <p class="ig-typography__overline content">
-                  AMZN
+                  --ticker--
                 </p>
                 <p class="ig-typography__caption text">
                   ∙
                 </p>
                 <p class="ig-typography__overline content">
-                  NASDAQ
+                  --exchange--
                 </p>
               </div>
               <h5 class="content">
-                Amazon.com, Inc.
+                --stock-company--name
               </h5>
             </div>
           </div>
@@ -207,25 +187,24 @@
                   <div class="column-layout frame-47">
                     <div class="row-layout frame-46">
                       <p class="ig-typography__overline content">
-                        AMZN
+                        --ticker--
                       </p>
                       <p class="ig-typography__caption text">
                         ∙
                       </p>
                       <p class="ig-typography__overline content">
-                        NASDAQ
+                        --exchange--
                       </p>
                     </div>
                     <h5 class="content">
-                      Amazon.com, Inc.
+                      --stock-company--name
                     </h5>
                   </div>
                 </div>
               </div>
               <div class="column-layout frame-28">
-                <igx-category-chart [dataSource]="financialBoxOfficeRevenue" chartType="line" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart>
+                <igx-category-chart [dataSource]="fakePendingOrdersPendingOrders" chartType="line" [xAxisLabelAngle]="30" includedProperties="TimeandDate,Quantity,Price" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart>
               </div>
-              <div class="row-layout frame-2"></div>
             </div>
           </div>
         </div>
@@ -244,8 +223,6 @@
             <igx-grid [data]="finTech2500Fins" primaryKey="id" displayDensity="cosy" [rowEditable]="true" [moving]="true" [allowFiltering]="true" filterMode="excelStyleFilter" width="100%" class="grid">
               <igx-grid-toolbar>
                 <igx-grid-toolbar-actions>
-                  <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-                  <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
                   <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
                   <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
                 </igx-grid-toolbar-actions>
