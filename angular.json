@@ -77,10 +77,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "open-fin-news-feed-2:build:production"
+              "browserTarget": "open-fin-news-feed-2:build:production",
+              "port": 4205
             },
             "development": {
-              "browserTarget": "open-fin-news-feed-2:build:development"
+              "browserTarget": "open-fin-news-feed-2:build:development",
+              "port": 4205
             }
           },
           "defaultConfiguration": "development"
