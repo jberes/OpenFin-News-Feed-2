@@ -1,12 +1,12 @@
 {
     "devtools_port": 9090,
     "startup_app": {
-        "name": "OpenFin News Feed 2",
+        "name": "OpenFin News Feed",
         "description": "News Feed, Crypto, and Stock Prices",
         "uuid": "IGOpenFinNewsFeed2",
-        "url": "http://localhost:4205/",
-        "applicationIcon": "http://localhost:4205/assets/app.ico",
-        "taskbarIcon": "http://localhost:4205/splash.png",
+        "url": "https://lemon-bush-0b9319810.3.azurestaticapps.net//",
+        "applicationIcon": "https://lemon-bush-0b9319810.3.azurestaticapps.net/assets/news.ico",
+        "taskbarIcon": "https://lemon-bush-0b9319810.3.azurestaticapps.net//assets/news.png",
         "minWidth": 700,
         "minHeight": 155,
         "defaultWidth": 800,
@@ -27,11 +27,11 @@
         "version": "stable"
     },
     "shortcut": {
-        "company": "Figma Demo",
-        "name": "Figma OpenFin",
+        "company": "Infragistics",
+        "name": "OpenFin News Feed",
         "description": "OpenFin News Feed",
-        "icon": "http://localhost:4205/assets/app.ico"
+        "icon": "https://lemon-bush-0b9319810.3.azurestaticapps.net/assets/news.ico"
     },
-    "splashScreenImage": "http://localhost:4205/assets/splash.png"
+    "splashScreenImage": "https://lemon-bush-0b9319810.3.azurestaticapps.net/news.png"
 }
 
