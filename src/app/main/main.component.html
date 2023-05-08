@@ -5,7 +5,8 @@
       <span igxTabHeaderLabel>Current Price</span>
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
-      <div class="row-layout group">
+      <!-- <div class="row-layout group"> -->
+        <div *ngIf="selectedItem"  class="row-layout group">
         <div class="column-layout frame-45">
           <div class="column-layout frame-50">
             <div class="row-layout frame-49">
@@ -156,7 +157,7 @@
       <span igxTabHeaderLabel>Latest News</span>
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
-      <div class="column-layout frame-45">
+      <div *ngIf="selectedItem" class="column-layout frame-45">
         <div class="row-layout frame-49">
           <div class="column-layout frame-48">
             <div class="column-layout frame-47">
@@ -193,7 +194,7 @@
       <span igxTabHeaderLabel>Sector Analysis</span>
     </igx-tab-header>
     <igx-tab-content class="row-layout tab-item-content">
-      <div class="row-layout group">
+      <div *ngIf="selectedItem" class="row-layout group">
         <div class="row-layout group">
           <div class="column-layout frame-45">
             <div class="column-layout frame-50">
