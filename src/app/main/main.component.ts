@@ -11,12 +11,12 @@ $.ig.RevealSdkSettings.setBaseUrl("https://reveal-api.azurewebsites.net/");
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss',     
+  styleUrls: ['./main.component.scss',
     '../../assets/dark-theme-financial-chart.css',
     '../../assets/dark-theme-tooltips.css',]
 })
 export class MainComponent implements OnInit, AfterViewInit {
-  
+
   public fakeStockDataStockData: any = null;
   public companyNewsDataNewsFeed: any = null;
   public fakePendingOrdersPendingOrders: any = null;
@@ -29,7 +29,7 @@ export class MainComponent implements OnInit, AfterViewInit {
 
 
   dataSource: any[] = [];
-  
+
   // Company Data
   originalStockSymbolData: any[] = [];
   filteredStockSymbolData: any[] = [];
@@ -41,6 +41,8 @@ export class MainComponent implements OnInit, AfterViewInit {
   prevSelectedItem: any;
   searchText: string = "";
 
+  private _revealView: any;
+
   constructor(
     private companyNewsDataService: CompanyNewsDataService,
     private finTech2500Service: FinTech2500Service,
@@ -51,7 +53,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     this.globalTicker = this.globalService.globalTicker;
     this.globalService.initInterApp();
   }
-  
+
   @ViewChild('revealView') el!: ElementRef;
 
    ngAfterViewInit() {
@@ -60,12 +62,12 @@ export class MainComponent implements OnInit, AfterViewInit {
 
     async loadDashboard(dashboardId: string, stockSymbol?: string) {
       const dashboard = await $.ig.RVDashboard.loadDashboard(dashboardId);
-      const revealView = new $.ig.RevealView(this.el.nativeElement);
-      revealView.dashboard = dashboard;
-      revealView.singleVisualizationMode=true;
-      revealView.showMenu=false;
-      revealView.showHeader=false;
-      revealView.maximizedVisualization = dashboard.visualizations.getByTitle('Sectors');
+      this._revealView = new $.ig.RevealView(this.el.nativeElement);
+      this._revealView.dashboard = dashboard;
+      this._revealView.singleVisualizationMode=true;
+      this._revealView.showMenu=false;
+      this._revealView.showHeader=false;
+      this._revealView.maximizedVisualization = dashboard.visualizations.getByTitle('Sectors');
       this.cdRef.detectChanges();
     }
 
@@ -137,5 +139,11 @@ export class MainComponent implements OnInit, AfterViewInit {
 
   public formatNumber(value: number) {
     return value.toFixed(2);
-}
+  }
+
+  public resizeReveal(index: number) {
+    if (index === 2) {
+      requestAnimationFrame(() => this._revealView.updateSize());
+    }
+  }
 }
