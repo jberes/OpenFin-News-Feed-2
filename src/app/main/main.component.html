@@ -1,4 +1,4 @@
-<igx-tabs [disableAnimation]="true" class="tabs">
+<igx-tabs [disableAnimation]="true" class="tabs" (selectedIndexChange)="resizeReveal($event)">
   <igx-tab-item [selected]="true" class="tab-item">
     <igx-tab-header>
       <igx-icon igxTabHeaderIcon>settings_input_antenna</igx-icon>
@@ -55,7 +55,7 @@
                       {{ selectedItem.stock_industry }}
                     </p>
                     <p class="ig-typography__body-2 content">
-                      
+
                     </p>
                   </div>
                 </div>
@@ -144,7 +144,7 @@
                   isWindowSyncedToVisibleRange="true">
                 </igx-financial-chart>
             </div>
-            
+
             </div>
           </div>
         </div>
@@ -221,7 +221,7 @@
               <div class="column-layout frame-28">
                 <div className="container fill">
               </div>
-              <div #revealView style="height: calc(100vh - 220px); width: 100%; position:relative;"></div>  
+              <div #revealView style="height: calc(100vh - 220px); width: 100%; position:relative;"></div>
               </div>
             </div>
           </div>
