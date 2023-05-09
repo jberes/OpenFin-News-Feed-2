@@ -1,8 +1,12 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CompanyStockDataService } from '../services/company-stock-data.service';
 import { CompanyNewsDataService } from '../services/company-news-data.service';
 import { FinTech2500Service } from '../services/fin-tech2500.service';
 import { GlobalService } from '../services/global-service.service';
+
+declare let $: any;
+$.ig.RevealSdkSettings.setBaseUrl("https://reveal-api.azurewebsites.net/");
+
 
 @Component({
   selector: 'app-main',
@@ -11,8 +15,8 @@ import { GlobalService } from '../services/global-service.service';
     '../../assets/dark-theme-financial-chart.css',
     '../../assets/dark-theme-tooltips.css',]
 })
-export class MainComponent implements OnInit {
-
+export class MainComponent implements OnInit, AfterViewInit {
+  
   public fakeStockDataStockData: any = null;
   public companyNewsDataNewsFeed: any = null;
   public fakePendingOrdersPendingOrders: any = null;
@@ -47,9 +51,25 @@ export class MainComponent implements OnInit {
     this.globalTicker = this.globalService.globalTicker;
     this.globalService.initInterApp();
   }
+  
+  @ViewChild('revealView') el!: ElementRef;
+
+   ngAfterViewInit() {
+    this.loadDashboard("Sector Analysis");
+    };
+
+    async loadDashboard(dashboardId: string, stockSymbol?: string) {
+      const dashboard = await $.ig.RVDashboard.loadDashboard(dashboardId);
+      const revealView = new $.ig.RevealView(this.el.nativeElement);
+      revealView.dashboard = dashboard;
+      revealView.singleVisualizationMode=true;
+      revealView.showMenu=false;
+      revealView.showHeader=false;
+      revealView.maximizedVisualization = dashboard.visualizations.getByTitle('Sectors');
+      this.cdRef.detectChanges();
+    }
 
   ngOnInit() {
-    
     this.companyStockDataService.getCompanyFeed().subscribe({
       next: data => {
         this.filteredStockSymbolData = this.originalStockSymbolData = data;

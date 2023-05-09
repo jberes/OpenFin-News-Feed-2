@@ -219,30 +219,9 @@
                 </div>
               </div>
               <div class="column-layout frame-28">
-
                 <div className="container fill">
-                  <igx-treemap #treemap class="category-chart">                      
-                      [dataSource]="fakePendingOrdersPendingOrders"
-                      parentIdMemberPath="parent"
-                      idMemberPath="name"
-                      labelMemberPath="name"
-                      valueMemberPath="population"
-                      fillScaleMode="Value"
-                      fillScaleMinimumValue="0"
-                      fillScaleMaximumValue="1500000000"
-                      fillBrushes="rgba(78, 98, 207, 1) rgba(138, 88, 214, 1)"
-                      isFillScaleLogarithmic="true"
-                      rootTitle="Countries"
-                      headerDisplayMode="Overlay"
-                      parentNodeBottomPadding="0"
-                      parentNodeLeftPadding="0"
-                      parentNodeRightPadding="0"
-                      parentNodeTopPadding="0"
-                      outline="black"
-                      strokeThickness="1">
-                </igx-treemap>
               </div>
-                <!-- <igx-category-chart [dataSource]="fakePendingOrdersPendingOrders" chartType="line" [xAxisLabelAngle]="30" includedProperties="TimeandDate,Quantity,Price" computedPlotAreaMarginMode="series" class="category-chart"></igx-category-chart> -->
+              <div #revealView style="height: calc(100vh - 220px); width: 100%; position:relative;"></div>  
               </div>
             </div>
           </div>
@@ -290,7 +269,7 @@
 
 
               </igx-column>
-              <igx-column field="buy" dataType="number" header="Buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
+  <!--             <igx-column field="buy" dataType="number" header="Buy" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="sell" dataType="number" header="Sell" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="spread" dataType="number" header="Spread" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="volume" dataType="number" header="Volume" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
@@ -314,7 +293,7 @@
               <igx-column field="cusip" dataType="string" header="CUSIP" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="cpn" dataType="string" header="CPN" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
               <igx-column field="maturity" dataType="string" header="Maturity" [groupable]="true" [sortable]="true" [resizable]="true" [selectable]="false"></igx-column>
-                <igx-action-strip>
+ -->                <igx-action-strip>
                 <igx-grid-pinning-actions></igx-grid-pinning-actions>
                 <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
               </igx-action-strip>
