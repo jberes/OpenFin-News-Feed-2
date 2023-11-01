@@ -128,7 +128,6 @@
       }
     }
   },
-  "defaultProject": "open-fin-news-feed-2",
   "cli": {
     "schematicCollections": [
       "@angular-eslint/schematics"
